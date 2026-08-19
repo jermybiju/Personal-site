@@ -40,6 +40,7 @@
             font-size: 2.2rem;
             background: linear-gradient(135deg, #f9d976, #f39b7b);
             -webkit-background-clip: text;
+             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .header .badge {
@@ -107,6 +108,30 @@
             margin-top: 1.5rem;
             text-align: center;
         }
+        /* Fade-in animation for cards*/
+        .section-cards {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        .section-card:nth-child(1) {
+            animation-delay: 0.1s;  
+        }
+        .section-card:nth-child(2) {
+            animation-delay: 0.3s;  
+        }
+        .section-card:nth-child(3) {
+            animation-delay: 0.5s;  
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }  
+        }
     </style>
 </head>
 <body>
@@ -114,6 +139,11 @@
         <div class="header">
             <h1>@jermybiju</h1>
             <div class="badge">✨ Stardance · Personal Site</div>
+        </div>
+        <!-- My Interests -->
+         <div style="background: #1b212f; border-radius: 1.5rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #2d3450;">
+            <h3 style="margin-bottom: 0.8rem; color: #facc15;">🌟 My Interests </h3>"
+            <p style="color: #a3adcc; line-height: 1.6;">I am passionate about web development, space exploration, and technology. I enjoy building projects that challenge me and allow me to learn new skills.</p>
         </div>
         <div class="section-grid">
             <div class="section-card">
@@ -136,7 +166,7 @@
             <a href="#" class="btn">🚢 Ship my project</a>
             <span style="margin-left: 1rem; color: #facc15;">10 ⭐ stardust</span>
         </div>
-        <div class="footer-note">⚡ Built with HTML + CSS · 3 sections</div>
+        <div class="footer-note">⚡ Built with HTML + CSS · © 2026 Jermy Biju · Stardance Challenge </div>
     </div>
 </body>
 </html>
