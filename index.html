@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0b0d15;
+            color: #e4e7f0;
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .card {
+            max-width: 880px;
+            width: 100%;
+            background: #141824;
+            border-radius: 2.5rem;
+            padding: 2.5rem;
+            border: 1px solid #2a2f42;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #282e44;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, #f9d976, #f39b7b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .badge {
+            background: #1f253b;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #aab3d0;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        @media (max-width: 600px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .section-card {
+            background: #1b212f;
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #2d3450;
+            transition: all 0.2s ease;
+        }
+        .section-card:hover {
+            border-color: #facc15;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -8px #00000080;
+        }
+        .section-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        .section-card p {
+            color: #a3adcc;
+            line-height: 1.6;
+        }
+        .btn {
+            background: #facc15;
+            color: #0b0d15;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            display: inline-block;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #fde047;
+            transform: scale(1.02);
+        }
+        .footer-note {
+            color: #5f6a8a;
+            font-size: 0.8rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>@jermybiju</h1>
+            <div class="badge">✨ Stardance · Personal Site</div>
+        </div>
+        <div class="section-grid">
+            <div class="section-card">
+                <div class="icon">🧑‍💻</div>
+                <h3>About me</h3>
+                <p>Hi, I'm Jermy! I love building web stuff, exploring space tech, and learning new things every day.</p>
+            </div>
+            <div class="section-card">
+                <div class="icon">🚀</div>
+                <h3>My Projects</h3>
+                <p>Currently working on my Stardance personal site. Next up: a NASA APOD viewer!</p>
+            </div>
+            <div class="section-card">
+                <div class="icon">📡</div>
+                <h3>Reach me</h3>
+                <p>Drop a DM on Hack Club Slack or find me on GitHub. Let's build something awesome together!</p>
+            </div>
+        </div>
+        <div>
+            <a href="#" class="btn">🚢 Ship my project</a>
+            <span style="margin-left: 1rem; color: #facc15;">10 ⭐ stardust</span>
+        </div>
+        <div class="footer-note">⚡ Built with HTML + CSS · 3 sections</div>
+    </div>
+</body>
+</html>
