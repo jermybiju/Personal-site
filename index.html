@@ -200,7 +200,7 @@
             <a href="#" class="btn">🚢 Ship my project</a>
             <span style="margin-left: 1rem; color: #facc15;">10 ⭐ stardust</span>
         </div>
-        <div class="footer-note">⚡ Built with HTML + CSS · © 2026 Jermy Biju · Stardance Challenge </div>
+        <div class="footer-note">⚡ Built with HTML + CSS · © <span id="year"></span> Jermy Biju · Stardance Challenge </div>
     </div>
     <!-- modal box structure -->
     <div id="infoModal"  class="modal">
@@ -234,6 +234,8 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+// Dynamic Year
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
