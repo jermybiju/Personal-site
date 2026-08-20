@@ -109,7 +109,7 @@
             text-align: center;
         }
         /* Fade-in animation for cards*/
-        .section-cards {
+        .section-card {
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
         }
@@ -132,35 +132,69 @@
                 transform: translateY(0);
             }  
         }
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.7); 
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #141824;
+            margin: auto;
+            padding: 2rem;
+            border: 1px solid #facc15;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="header">
-            <h1>@jermybiju</h1>
+            <h1> JERMY BIJU </h1>
             <div class="badge">✨ Stardance · Personal Site</div>
         </div>
         <!-- My Interests -->
-         <div style="background: #1b212f; border-radius: 1.5rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #2d3450;">
-            <h3 style="margin-bottom: 0.8rem; color: #facc15;">🌟 My Interests </h3>"
+         <div style="background: #141824; border-radius: 2rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #facc15;">
+            <h3 style="margin-bottom: 0.8rem; color: #facc15;">🌟 My Interests </h3>
             <p style="color: #a3adcc; line-height: 1.6;">I am passionate about web development, space exploration, and technology. I enjoy building projects that challenge me and allow me to learn new skills.</p>
         </div>
         <div class="section-grid">
-            <div class="section-card">
+            <div class="section-card" onclick="showInfo('about')">
                 <div class="icon">🧑‍💻</div>
                 <h3>About me</h3>
-                <p>Hi, I'm Jermy! I love building web stuff, exploring space tech, and learning new things every day.</p>
+                <p>Hi, I'm Jermy Biju! I'm a 18 year-old developer from kerala. I love building web stuff, exploring space tech, and learning new things every day.</p>
             </div>
-            <div class="section-card">
+            <div class="section-card" onclick="showInfo('projects')">
                 <div class="icon">🚀</div>
                 <h3>My Projects</h3>
                 <p>Currently working on my Stardance personal site. Next up: a NASA APOD viewer!</p>
             </div>
-            <div class="section-card">
+            <div class="section-card" onclick="showInfo('contact')">
                 <div class="icon">📡</div>
                 <h3>Reach me</h3>
                 <p>Drop a DM on Hack Club Slack or find me on GitHub. Let's build something awesome together!</p>
-            </div>
+                  <p>  
+                Github:  
+                    <a href="https://github.com/jermybiju" target="_blank" style="color:#facc15; text-decoration: none;">jermybiju</a> 
+                    <br>
+                    📧 Email:
+                    <a href="mailto:jermybiju00@gmail.com" style="color:#facc15; text-decoration: none;">jermybiju00@gmail.com</a>
+                    <br>
+                    💬 Slack: 
+                    <a href="https://hackclub.slack.com/team/U0BLVFEFSAK" target="_blank" style="color:#facc15; text-decoration: none;">@jermybiju00</a>
+        </div>        
         </div>
         <div>
             <a href="#" class="btn">🚢 Ship my project</a>
@@ -168,5 +202,38 @@
         </div>
         <div class="footer-note">⚡ Built with HTML + CSS · © 2026 Jermy Biju · Stardance Challenge </div>
     </div>
+    <!-- modal box structure -->
+    <div id="infoModal"  class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle" style="color:#facc15; margin-bottom:0.5rem;">📄 Title</h2>
+            <p id="modalText" style="color:#a3adcc; line-height:1.6;">Content goes here...</p>
+            <button onclick="closeModal()" style="background:#facc15; border:none; padding:0.5rem 1.5rem; border-radius:40px; cursor:pointer; font-weight:bold; margin-top:1rem;">Close ✕ </button>
+        </div>
+    </div>
+    <script>
+function showInfo(section) {
+    const title = document.getElementById('modalTitle');
+    const text = document.getElementById('modalText');
+    if (section === 'about') {
+        title.textContent = '🧑‍💻 About Me';
+        text.textContent = "Hi, I'm Jermy Biju! I'm a 18-year-old developer from Kerala. I love building websites and robots.";
+    } else if (section === 'projects') {
+        title.textContent = '🚀 My Projects';
+        text.textContent = "Stardance Personal Site, NASA APOD Viewer (coming soon), Line-follower Robot.";
+    }else if (section === 'contact') {
+    title.textContent = '📡 Contact Me';
+    text.innerHTML = 'GitHub: <a href="https://github.com/jermybiju" target="_blank" style="color:#facc15;">@jermybiju</a><br>Email: <a href="mailto:jermybiju00@gmail.com" style="color:#facc15;">jermybiju00@gmail.com</a><br>💬 Slack: <a href="https://hackclub.slack.com/team/U0BLVFEFSAK" target="_blank" style="color:#facc15;">@jermybiju00</a>';
+}
+document.getElementById('infoModal').style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('infoModal').style.display = 'none';
+}
+window.onclick = function(event) {
+    if (event.target == document.getElementById('infoModal')) {
+        closeModal();
+    }
+}
+</script>
 </body>
 </html>
