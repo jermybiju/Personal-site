@@ -8,7 +8,7 @@ This website showcases my projects, technical interests, achievements, certifica
 
 **[Visit My Portfolio](https://jermybiju.github.io/personal-site/)**
 
-## 👨‍💻 About
+##  About
 
 I am JERMY BIJU, a student developer interested in technology, engineering, Artificial Intelligence, Machine Learning, Data Science, and software development.
 
@@ -46,7 +46,7 @@ The project is being developed as part of my Stardance journey.
 * Contact information
 * Responsive design
 
-## 🛠️ Technologies
+##  Technologies
 
 * HTML5
 * CSS3
