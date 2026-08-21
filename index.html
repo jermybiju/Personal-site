@@ -504,6 +504,55 @@
         .light-mode .cert-card img {
             border-color: #d0d5dd !important;
         }
+        /* Light Mode - Skill Tags Fix */
+       .light-mode .skill-tag {
+            background: #e8ecf1 !important;
+            color: #111 !important;
+            border-color: #b0b8d0 !important;
+}
+        .light-mode .skill-tag.learning {
+           background: #e8ecf1 !important;
+           color: #f59e0b !important;
+           border-color: #f59e0b !important;
+}
+       /* Back to Top Button - Circular & Stylish */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #facc15, #f59e0b);
+            color: #0b0d15;
+            border: none;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(250, 204, 21, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+             gap: 8px;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: linear-gradient(135deg, #fde047, #facc15);
+            box-shadow: 0 8px 30px rgba(250, 204, 21, 0.7);
+        }
+        .light-mode .back-to-top {
+            background: linear-gradient(135deg, #facc15, #f59e0b);
+            color: #0b0d15;
+        }
+ 
     </style>
 </head>
 <body>
@@ -541,7 +590,7 @@
         <!-- ===== ABOUT ===== -->
         <section class="section" id="about">
             <h2>🧑‍💻 About <span class="highlight">Me</span></h2>
-            <p>Hey! I'm Jermy. I'm from Kerala, currently wrapping up my Plus Two and getting ready for college apps in 2027. I'm that person who gets way too excited about space data and building stuff that actually does something useful.</p>
+            <p>Hey! I'm Jermy Biju. I'm from Kerala,India,currently wrapping up my Plus Two and getting ready for college apps in 2027. I'm that person who gets way too excited about space data and building stuff that actually does something useful.</p>
             <p>Right now, I'm deep into AI, satellite data, and web dev — trying to figure out how to make tech solve real problems, not just look cool.</p>
         </section>
 
@@ -633,7 +682,7 @@
                     <p>Improving &amp; Shipping</p>
                 </div>
             </div>
-            <p style="margin-top:1.2rem;">📌 <strong>2+ hours</strong> of coding logged · Active development · Devlogs posted</p>
+            <p style="margin-top:1.2rem;">📌 <strong>6+ hours</strong> of coding logged across projects · Portfolio: 5+ hrs · WildfireWatch: 1+ hr · 4+ Devlogs posted</p></p>
         </section>
 
         <!-- ===== SKILLS ===== -->
@@ -735,15 +784,20 @@
 
         <!-- ===== FOOTER ===== -->
         <div class="footer">
-            <p>© <span id="year"></span> JERMY BIJU · Built with HTML, CSS &amp; ☕</p>
+            <p>© <span id="year"></span> JERMY BIJU · Built with HTML,Java Script,CSS &amp; ☕</p>
             <p>
                 <a href="https://github.com/jermybiju">GitHub</a>
+                |
                 <a href="mailto:jermybiju00@gmail.com">Email</a>
+                |
                 <a href="#">Resume (coming soon)</a>
             </p>
             <!-- fun fact - added manually lol -->
-            <p style="font-size:0.75rem; color:#5f6a8a; margin-top:0.5rem;">Fun fact: I once spent 6 hours debugging a missing semicolon. Never again.</p>
-        </div>
+            <p style="font-size:0.75rem; color:#5f6a8a; margin-top:0.5rem;">Fun facts:🧠I've debugged more in my head than on my computer.
+                <br>
+                ☕ I run on coffee and broken code. No coffee, no code.
+                </p>
+             </div>
 
     </div>
         <!-- Certificate Zoom Modal -->
@@ -751,6 +805,10 @@
         <span class="cert-modal-close" onclick="event.stopPropagation(); closeCertModal();">&times;</span>
         <img class="cert-modal-content" id="certModalImg" src="">
     </div>
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top" aria-label="Back to top">
+        <span aria-hidden="true">🔝</span>
+    </button>
 
     <script>
         // theme toggle - works fine
@@ -781,6 +839,32 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeCertModal();
+            }
+        });
+        // ===== Back to Top Button - Show on Scroll =====
+        window.addEventListener('scroll', function() {
+            var btn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });// ===== Back to Top Button - Show on Scroll =====
+        window.addEventListener('scroll', function() {
+            var btn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+        // ===== Back to Top Button - Show on Scroll =====
+        window.addEventListener('scroll', function() {
+            var btn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
             }
         });
 
